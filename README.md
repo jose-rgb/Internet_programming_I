@@ -1,3 +1,3 @@
-#Hello World em Django, React, HTML é Typescript.
+##Hello World em Django, React, HTML é Typescript.
 
-## Vídeo explicativo => https://youtu.be/w8mgnwbWS4I
+### Vídeo explicativo => https://youtu.be/w8mgnwbWS4I
