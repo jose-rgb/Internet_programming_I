@@ -1,5 +1,3 @@
-# Programação para a Internet I
-
 ## Atividade 1
 Criar um "hello world" em:
 - HTML+CSS;
