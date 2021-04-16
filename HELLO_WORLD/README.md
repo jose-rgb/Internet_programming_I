@@ -8,4 +8,4 @@ Criar um "hello world" em:
 -React.
 
 ##Vídeo de de demonstração:
-- https://youtu.be/w8mgnwbWS4I
+-https://youtu.be/w8mgnwbWS4I
