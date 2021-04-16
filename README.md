@@ -1,2 +1,2 @@
-# Internet_programming_I
--> Atividades feitas na disciplina de Programação para a Internet I
+# Programação para a Internet I
+- Repositório para as atividades feitas na disciplina. 
