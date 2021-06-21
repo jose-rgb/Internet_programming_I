@@ -1,18 +1,43 @@
 "use strict";
 exports.__esModule = true;
-exports.jogo = void 0;
+exports.Jogo = void 0;
 var personagens_1 = require("./personagens");
-var jogo = /** @class */ (function () {
-    function jogo(arrayPersons) {
-        this.arrayPersons = arrayPersons;
+var Jogo = /** @class */ (function () {
+    function Jogo() {
+        this.personagens = [];
     }
-    return jogo;
+    Jogo.prototype.incluir = function (p) {
+        var personagemIgual = this.personagens.filter(function (personagem) { return personagem.id === p.id; });
+        if (personagemIgual.length > 0) {
+            console.log('ID já existe.');
+            return;
+        }
+        this.personagens.push(p);
+    };
+    Jogo.prototype.consultar = function (id) {
+        var personagem = this.personagens.filter(function (personagem) { return personagem.id === id; });
+        if (personagem.length > 0) {
+            return personagem[0];
+        }
+        return null;
+    };
+    Jogo.prototype.atacar = function (idAtacante, idAtacado) {
+        if (idAtacante === idAtacado) {
+            console.log('Error, personagem de mesmo id.');
+            return;
+        }
+        var atacante = this.consultar(idAtacante);
+        var atacado = this.consultar(idAtacado);
+        if (atacante && atacado) {
+            if (atacante instanceof personagens_1.Soldado || atacante instanceof personagens_1.Cavaleiro) {
+                atacante.atacar(atacado);
+                return;
+            }
+        }
+    };
+    Jogo.prototype.avaliarBatalha = function () {
+        this.personagens.forEach(function (personagem) { return console.log(personagem.toString()); });
+    };
+    return Jogo;
 }());
-exports.jogo = jogo;
-////////////////////////////////////////////////
-var person1 = new personagens_1.Personagem(1, 'José', 500);
-var person2 = new personagens_1.Soldado(2, 'Joao', 500, 10);
-var person3 = new personagens_1.Cavaleiro(1, 'Jué', 500, 15);
-console.log(person1);
-console.log(person2);
-console.log(person3);
+exports.Jogo = Jogo;
